@@ -26,11 +26,11 @@ jobs:
         echo "84831b9409646a914e3056144cf2f1507d7b1d4a" >> $ANDROID_SDK_ROOT/licenses/android-sdk-license
         echo "d56f5187479451eabf01fb78af6dfcb131a648b0" >> $ANDROID_SDK_ROOT/licenses/android-sdk-license
 
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+
     - name: Build Debug APK with Gradle
-      uses: gradle/gradle-build-action@v2
-      with:
-        gradle-version: '7.5'
-        arguments: assembleDebug
+      run: ./gradlew assembleDebug
 
     - name: Upload Generated APK
       uses: actions/upload-artifact@v4
