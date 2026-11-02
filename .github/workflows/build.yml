@@ -19,6 +19,7 @@ jobs:
         java-version: '17'
 
     - name: Setup Android SDK Environment & Licenses
+- name: Setup Android SDK Environment & Licenses
       run: |
         echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
         mkdir -p $ANDROID_SDK_ROOT/licenses
